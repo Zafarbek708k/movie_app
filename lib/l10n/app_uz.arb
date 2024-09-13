@@ -1,0 +1,13 @@
+{
+  "@@locale": "uz",
+
+  "helloWorld": "Salom Dunyo!",
+  "welcome1title": "Xush kelibsiz",
+  "welcome1description": "Bu birinchi tanishtiruv ekranidir.",
+
+  "welcome2title": "Kashf qiling",
+  "welcome2description": "Bu yerdan bizning xususiyatlarimiz haqida ko'proq bilib olishingiz mumkin.",
+
+  "welcome3title": "Boshlash",
+  "welcome3description": "Keling, ilovani ishga tushiramiz!"
+}

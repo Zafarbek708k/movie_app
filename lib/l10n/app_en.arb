@@ -1,0 +1,14 @@
+{
+  "@@locale": "en",
+
+  "helloWorld": "Hello World!",
+  "welcome1title": "Welcome",
+  "welcome1description": "This is the first onboarding screen.",
+
+  "welcome2title": "Discover",
+  "welcome2description": "Here you can learn more about our features.",
+
+  "welcome3title": "Get Started",
+  "welcome3description": "Let's get started with the app!"
+
+}

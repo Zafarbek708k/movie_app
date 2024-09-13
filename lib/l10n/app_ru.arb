@@ -1,0 +1,13 @@
+{
+  "@@locale": "ru",
+
+  "helloWorld": "Привет, мир!",
+  "welcome1title": "Добро пожаловать",
+  "welcome1description": "Это первый экран приветствия.",
+
+  "welcome2title": "Откройте для себя",
+  "welcome2description": "Здесь вы можете узнать больше о наших функциях.",
+
+  "welcome3title": "Начать",
+  "welcome3description": "Давайте начнем использовать приложение!"
+}
