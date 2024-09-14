@@ -20,11 +20,11 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   late final String? enterUser;
 
-  Future<bool?> isEnterUser()async{
-    enterUser = await  AppStorage.$read(key: StorageKey.enter);
-    if(enterUser != null){
+  Future<bool?> isEnterUser() async {
+    enterUser = await AppStorage.$read(key: StorageKey.enter);
+    if (enterUser != null) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
@@ -44,37 +44,37 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const CustomTextWidget("Splash", textColor: Colors.black),
-             Text(
-               context.localized.welcome3description,
+            Text("Splash", style: context.textTheme.bodySmall),
+            Text(
+              context.localized.welcome3description,
               style: TextStyle(color: context.theme.primaryColor),
             ),
             MaterialButton(
               onPressed: () async {
-                themeController.switchTheme();  // Using the shared instance
+                themeController.switchTheme(); // Using the shared instance
               },
               shape: const StadiumBorder(side: BorderSide(color: Colors.orangeAccent)),
-              child:  Text(
+              child: Text(
                 "switch them",
                 style: TextStyle(color: context.theme.primaryColor),
               ),
             ),
             MaterialButton(
               onPressed: () async {
-               localController.changeLocal(LangCodes.en);
+                localController.changeLocal(LangCodes.en);
               },
               shape: const StadiumBorder(side: BorderSide(color: Colors.orangeAccent)),
-              child:  Text(
+              child: Text(
                 "switch Lang",
                 style: TextStyle(color: context.theme.primaryColor),
               ),
             ),
+      
           ],
         ),
       ),

@@ -19,4 +19,6 @@ final class AppColors {
   static const Color l767989 = Color(0xff767989); //textFild icon colors
   //profile page
   static const Color profil = Color(0xffff8c43);  //language icon colors
+  static const Color white = Color(0xffffffff);  //language icon colors
+  static const Color yellow = Color(0xfff3b400);  //language icon colors
 }
