@@ -54,10 +54,20 @@ class _HomePageState extends ConsumerState<Home> {
                           height: 50.h,
                           width: 60.h,
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(150),
+                            gradient: const LinearGradient(
+                              colors: [Colors.deepOrange, Colors.red, Colors.deepPurple],
+                            ),
+                          ),
+                          child: Container(
+                            margin: const EdgeInsets.all(4), // Adjust this value to set border thickness
+                            decoration: BoxDecoration(
+                              color: Colors.white, // Background color of the inner container
                               borderRadius: BorderRadius.circular(150),
-                              border: Border.all(color: context.appTheme.secondary, ),
-                              gradient: LinearGradient(colors: [Colors.deepOrange, Colors.red, Colors.deepPurple])),
+                            ),
+                          ),
                         ),
+
                       );
                     }),
               ),
