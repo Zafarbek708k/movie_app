@@ -26,61 +26,71 @@ class _OnBoardingPageState extends ConsumerState<OnBoardingPage> {
     final controller = ref.read(entryController);
 
     return Scaffold(
-      body: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          PageView(
-            controller: controller.pageController,
-            onPageChanged: (index) {
-              controller.onPageChanged(index);
-            },
-            children:  [
-              OnBoardingContent(
-                title: context.localized.welcome1title,
-                description: context.localized.welcome1description,
-              ),
-              OnBoardingContent(
-                title: context.localized.welcome2title,
-                description: context.localized.welcome2description,
-              ),
-              OnBoardingContent(
-                title: context.localized.welcome3title,
-                description:context.localized.welcome3description,
-              ),
-            ],
-          ),
-          Positioned(
-            bottom: 20,
-            child: Column(
-              children: [
-                SmoothPageIndicator(
-                  controller: controller.pageController,
-                  count: 3,
-                  effect: const ExpandingDotsEffect(
-                    activeDotColor: Colors.blue,
-                    dotColor: Colors.grey,
-                    dotHeight: 8,
-                    dotWidth: 8,
-                    spacing: 8,
-                  ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(controller.images[controller.currentPage]),
+            fit: BoxFit.cover
+          )
+        ),
+        child: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            PageView(
+              controller: controller.pageController,
+              onPageChanged: (index) {
+                controller.onPageChanged(index);
+              },
+              children:  [
+                OnBoardingContent(
+                  title: context.localized.welcome1title,
+                  description: context.localized.welcome1description,
                 ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: controller.currentPage == 2
-                      ? () {context.go(AppRouteName.home);}
-                      : () {
-                    log("A");
-                    controller.pageController.nextPage(
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeIn,
-                    );
-                  },
-                  child: CustomTextWidget(controller.currentPage > 1 ? "Get Started" : "Next", textColor: context.theme.primaryColorLight),
+                OnBoardingContent(
+                  title: context.localized.welcome2title,
+                  description: context.localized.welcome2description,
+                ),
+                OnBoardingContent(
+                  title: context.localized.welcome3title,
+                  description:context.localized.welcome3description,
                 ),
               ],
             ),
-          ),
-        ],
+            Positioned(
+              bottom: 20,
+              child: Column(
+                children: [
+                  SmoothPageIndicator(
+                    controller: controller.pageController,
+                    count: 3,
+                    effect: const ExpandingDotsEffect(
+                      activeDotColor: Colors.blue,
+                      dotColor: Colors.grey,
+                      dotHeight: 8,
+                      dotWidth: 8,
+                      spacing: 8,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: controller.currentPage == 2
+                        ? () {context.go(AppRouteName.home);}
+                        : () {
+                      log("A");
+                      controller.pageController.nextPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeIn,
+                      );
+                    },
+                    child: CustomTextWidget(controller.currentPage > 1 ? "Get Started" : "Next", textColor: context.appTheme.secondary),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

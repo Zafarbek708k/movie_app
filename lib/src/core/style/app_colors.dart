@@ -1,9 +1,18 @@
 import "dart:ui";
 
 final class AppColors {
-  //dicoveriy page top colors
-  static const Color l111719 = Color(0xff111719);
-  static const Color lF83B01 = Color(0xffF83B01); //eng kop ishlatilgan rang ekan
+  // dark mode colors
+  static const Color appMainColor = Color(0xff242A32);//#
+  static const Color appBottomNavColor = Color(0xff0296E5);
+  static const Color white = Color(0xffffffff);
+
+
+// light mode colors
+  static const Color appMainColorLight = Color(0xffF5F5F5); // Light gray (near white) for background
+  static const Color appBottomNavColorLight = Color(0xff006AB6); // Darker blue for accent (suitable for light mode)
+  static const Color black = Color(0xff000000); // Black text or elements for contrast
+
+
   static const Color lF96234 = Color(0xffF96234);
 
   static const Color lFED8CC = Color(0xffFED8CC);
@@ -19,6 +28,6 @@ final class AppColors {
   static const Color l767989 = Color(0xff767989); //textFild icon colors
   //profile page
   static const Color profil = Color(0xffff8c43);  //language icon colors
-  static const Color white = Color(0xffffffff);  //language icon colors
+
   static const Color yellow = Color(0xfff3b400);  //language icon colors
 }

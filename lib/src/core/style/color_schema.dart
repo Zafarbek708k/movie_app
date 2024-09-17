@@ -4,11 +4,13 @@ import "app_colors.dart";
 
 const ColorScheme lightColorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: AppColors.yellow,
-  onPrimary: Color(0xff141311),
+  primary: AppColors.appMainColorLight,
+  onPrimary: AppColors.appBottomNavColorLight,
+  secondary: AppColors.black,
+  onPrimaryContainer: Colors.deepOrange,
+
+
   primaryContainer: Color(0xff141311),
-  onPrimaryContainer: Color(0xff141311),
-  secondary: Color(0xff141311),
   onSecondary: Color(0xff141311),
   secondaryContainer: Color(0xffffffff),
   onSecondaryContainer: Color(0xff141414),
@@ -36,13 +38,14 @@ const ColorScheme lightColorScheme = ColorScheme(
 
 const ColorScheme darkColorScheme = ColorScheme(
   brightness: Brightness.dark,
-  primary: Colors.blue,
-  onPrimary: Colors.blue,
-  primaryContainer: Colors.blue,
-  onPrimaryContainer: Colors.blue,
-  secondary: Colors.blue,
+
+  primary: AppColors.appMainColor,
+  onPrimary: AppColors.appBottomNavColor,
+  secondary: AppColors.white,
+  onPrimaryContainer: Colors.deepOrange,
+
+  primaryContainer: AppColors.yellow,
   onSecondary: Colors.blue,
-  // secondaryContainer: Color(0xffffffff),
   secondaryContainer:  Colors.blue,
   onSecondaryContainer: Colors.blue,
   tertiary: Colors.blue,

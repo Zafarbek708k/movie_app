@@ -80,11 +80,7 @@ class ApiService {
     }
   }
 
-  static Future<String?> post(
-    String api,
-    Map<String, dynamic> data, [
-    Map<String, dynamic> params = const <String, dynamic>{},
-  ]) async {
+  static Future<String?> post(String api, Map<String, dynamic> data, [Map<String, dynamic> params = const <String, dynamic>{}]) async {
     try {
       final response = await (await initDio()).post<dynamic>(api, data: data, queryParameters: params);
       return jsonEncode(response.data);
@@ -99,11 +95,7 @@ class ApiService {
     }
   }
 
-  static Future<String?> multipart(
-    String api,
-    List<File> paths, {
-    bool picked = false,
-  }) async {
+  static Future<String?> multipart(String api, List<File> paths, {bool picked = false}) async {
     final formData = paths.mappedFormData(isPickedFile: picked);
 
     try {

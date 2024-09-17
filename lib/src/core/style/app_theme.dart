@@ -1,5 +1,6 @@
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
+import "package:movie_app/src/core/style/app_colors.dart";
 import "package:movie_app/src/core/style/text_style.dart";
 
 import "color_schema.dart";
@@ -9,19 +10,21 @@ final class AppThemes {
   final ThemeMode mode;
   final ThemeData darkTheme;
   final ThemeData lightTheme;
+  final BuildContext context;
 
-  AppThemes({required this.mode})
+
+  AppThemes(this.context, {required this.mode})
       : darkTheme = ThemeData(
           brightness: Brightness.dark,
           colorScheme: darkColorScheme,
-          scaffoldBackgroundColor: Colors.white,
-          textTheme: const AppTextStyle(),
+          scaffoldBackgroundColor: Theme.of(context).colorScheme.primary,
+          textTheme:  AppTextStyle(context),
         ),
         lightTheme = ThemeData(
           brightness: Brightness.light,
           colorScheme: lightColorScheme,
           scaffoldBackgroundColor: Colors.white,
-          textTheme: const AppTextStyle(),
+          textTheme:  AppTextStyle(context)
         );
 
   static ThemeData light() => ThemeData(

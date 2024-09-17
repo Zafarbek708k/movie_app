@@ -24,15 +24,16 @@ class _OnBoardingContentState extends State<OnBoardingContent> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        const SizedBox(height: 75),
         CustomTextWidget(
           widget.title??"title",
-          textColor: context.theme.primaryColor,
+          textColor: context.appTheme.onPrimaryContainer,
         ),
         const SizedBox(height: 16),
         CustomTextWidget(
           widget.description??"description",
           textAlign: TextAlign.center,
-          textColor: context.theme.primaryColor,
+          textColor: context.appTheme.onPrimaryContainer,
         ),
       ],
     ),

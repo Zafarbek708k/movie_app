@@ -25,10 +25,7 @@ class HomeViewModel extends ChangeNotifier {
         context.go(AppRouteName.search);
         break;
       case 2:
-        context.go(AppRouteName.favorite);
-        break;
-      case 3:
-        context.go(AppRouteName.profile);
+        context.go(AppRouteName.watchList);
         break;
       default:
         context.go(AppRouteName.home);

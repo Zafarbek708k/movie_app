@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
+import "package:movie_app/src/feature/entry/view/pages/on_boarding_page.dart";
 import "package:movie_app/src/feature/entry/view/pages/splash_page.dart";
 import "package:movie_app/src/feature/settings/theme_controller.dart";
 import "../../feature/home_navigation.dart";
@@ -24,11 +25,7 @@ final class AppRouter {
 
       GoRoute(
         path: AppRouteName.welcomePage,
-        builder: (context, state) => const Scaffold(
-          body: Center(
-            child: Text("welcome", style: TextStyle(color: Colors.blueGrey),)
-          ),
-        ),
+        builder: (context, state) => const OnBoardingPage(),
       ),
 
       /// Patient Shell Route
@@ -44,17 +41,11 @@ final class AppRouter {
               GoRoute(
                 path: AppRouteName.home,
                 pageBuilder: (context, state) => const NoTransitionPage(
-                  child: Scaffold(),
+                  child: Scaffold(
+                    body: Center(child: Text("Home", style: TextStyle(color: Colors.black),),),
+                  ),
                 ),
                 routes: const [],
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: AppRouteName.favorite,
-                pageBuilder: (context, state) => const NoTransitionPage(child: Scaffold()),
               ),
             ],
           ),
@@ -69,11 +60,12 @@ final class AppRouter {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: AppRouteName.profile,
+                path: AppRouteName.watchList,
                 pageBuilder: (context, state) => const NoTransitionPage(child: Scaffold()),
               ),
             ],
           ),
+
           // StatefulShellBranch(
           //   routes: [
           //     GoRoute(
