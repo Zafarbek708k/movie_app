@@ -1,4 +1,7 @@
+import "dart:developer";
+
 import "package:flutter/material.dart";
+import "package:movie_app/src/core/storage/app_storage.dart";
 
 
 class EntryViewModel extends ChangeNotifier {
@@ -8,6 +11,10 @@ class EntryViewModel extends ChangeNotifier {
 
   void onPageChanged(int index) {
     currentPage = index;
+    log(currentPage.toString());
+    if(currentPage == 2){
+      AppStorage.$write(key: StorageKey.enter, value: "Enter user");
+    }
     notifyListeners();
   }
 

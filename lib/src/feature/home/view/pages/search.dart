@@ -15,8 +15,8 @@ class Search extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<Search> {
   @override
   Widget build(BuildContext context) {
-    ref.watch(homeController);
-    final controller = ref.read(homeController);
+    ref.watch(homePageController);
+    final controller = ref.read(homePageController);
     return  Scaffold(
       body: Center(
         child: MaterialButton(

@@ -20,46 +20,48 @@ class CustomTextWidget extends StatelessWidget {
   final FontStyle fontStyle;
 
   const CustomTextWidget(
-      this.text, {
-        super.key,
-        this.textColor = Colors.white,
-        this.backgroundColor,
-        this.fontSize = 16,
-        this.fontWeight = FontWeight.normal,
-        this.textAlign = TextAlign.start,
-        this.textDecoration = TextDecoration.none,
-        this.decorationThickness,
-        this.textOverflow = TextOverflow.clip,
-        this.maxLine,
-        this.softWrap,
-        this.wordSpacing,
-        this.height = 1.25,
-        this.letterSpacing,
-        this.fontFamily,
-        this.fontStyle = FontStyle.normal,
-      });
+    this.text, {
+    super.key,
+    this.textColor = Colors.white,
+    this.backgroundColor,
+    this.fontSize = 16,
+    this.fontWeight = FontWeight.normal,
+    this.textAlign = TextAlign.start,
+    this.textDecoration = TextDecoration.none,
+    this.decorationThickness,
+    this.textOverflow = TextOverflow.clip,
+    this.maxLine,
+    this.softWrap,
+    this.wordSpacing,
+    this.height = 1.25,
+    this.letterSpacing,
+    this.fontFamily,
+    this.fontStyle = FontStyle.normal,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Text(text,
-        textAlign: textAlign,
-        overflow: textOverflow,
-        maxLines: maxLine,
-        softWrap: softWrap,
-        style: GoogleFonts.montserrat(
-          textStyle: TextStyle(
-            color: textColor,
-            backgroundColor: backgroundColor,
-            fontFamily: fontFamily,
-            fontSize: fontSize,
-            fontWeight: fontWeight,
-            fontStyle: fontStyle,
-            decoration: textDecoration,
-            decorationThickness: decorationThickness,
-            wordSpacing: wordSpacing,
-            height: height,
-            letterSpacing: letterSpacing,
-          ),
-        ));
+    return Text(
+      text,
+      textAlign: textAlign,
+      overflow: textOverflow,
+      maxLines: maxLine,
+      softWrap: softWrap,
+      style: GoogleFonts.montserrat(
+        textStyle: TextStyle(
+          color: textColor,
+          backgroundColor: backgroundColor,
+          fontFamily: fontFamily,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          fontStyle: fontStyle,
+          decoration: textDecoration,
+          decorationThickness: decorationThickness,
+          wordSpacing: wordSpacing,
+          height: height,
+          letterSpacing: letterSpacing,
+        ),
+      ),
+    );
   }
 }

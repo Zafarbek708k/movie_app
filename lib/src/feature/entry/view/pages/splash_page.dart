@@ -1,4 +1,5 @@
 import "dart:async";
+import "dart:developer";
 import "package:flutter/material.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
 import "package:go_router/go_router.dart";
@@ -20,6 +21,7 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<bool?> isEnterUser() async {
     enterUser = await AppStorage.$read(key: StorageKey.enter);
+    log(enterUser ?? "enter user = null");
     if (enterUser != null) {
       return true;
     } else {
@@ -27,18 +29,20 @@ class _SplashPageState extends State<SplashPage> {
     }
   }
 
-  // @override
-  // void didChangeDependencies()async {
-  //   bool? a = await isEnterUser();
-  //   Timer(const Duration(seconds: 3), (){
-  //     if(a != null && a == true){
-  //       context.go(AppRouteName.home);
-  //     }else{
-  //       context.go(AppRouteName.welcomePage);
-  //     }
-  //   });
-  //   super.didChangeDependencies();
-  // }
+
+  @override
+  void didChangeDependencies()async {
+    bool? a = await isEnterUser();
+    log("a ==  $a");
+    Timer(const Duration(seconds: 2), (){
+      if(a != null && a == true){
+        context.go(AppRouteName.home);
+      }else{
+        context.go(AppRouteName.welcomePage);
+      }
+    });
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {

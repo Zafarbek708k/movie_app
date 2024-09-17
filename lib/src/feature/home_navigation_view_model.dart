@@ -1,9 +1,11 @@
+import "dart:developer";
+
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:flutter_advanced_drawer/flutter_advanced_drawer.dart";
 import "package:go_router/go_router.dart";
+import "package:movie_app/src/core/routes/app_route_name.dart";
 
-import "../../../core/routes/app_route_name.dart";
 
 class HomeViewModel extends ChangeNotifier {
   late AdvancedDrawerController advancedDrawerController = AdvancedDrawerController();
@@ -13,6 +15,7 @@ class HomeViewModel extends ChangeNotifier {
 
   void updateIndex(int newIndex) {
     _selectedIndex = newIndex;
+    log(_selectedIndex.toString());
     notifyListeners();
   }
 

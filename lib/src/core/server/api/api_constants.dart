@@ -9,8 +9,8 @@ final class ApiConst {
   static const String baseUrl = "https://api.themoviedb.org/3";
 
   // Dynamic API Endpoints
-  static String apiGetMovieList(String accountId) => "/account/$accountId/lists";
-  static String apiGetWatchListMovies(String accountId) => "/account/$accountId/watchlist/movies";
+  static String apiGetMovieLis = "/account/$accountId/lists";
+  static String apiGetWatchListMovies = "/account/$accountId/watchlist/movies";
 
   // Static Endpoint (for general trending movies with pagination)
   static const String apiGetMovieWithPage = "/trending/all/day";

@@ -24,8 +24,8 @@ class MainPage extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<MainPage> {
   @override
   Widget build(BuildContext context) {
-    ref.watch(homeController);
-    final homeViewModel = ref.read(homeController);
+    ref.watch(homeNavigationController);
+    final homeViewModel = ref.read(homeNavigationController);
 
     return AdvancedDrawer(
       backdrop: Container(

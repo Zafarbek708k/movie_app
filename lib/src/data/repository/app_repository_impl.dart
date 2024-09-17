@@ -6,5 +6,11 @@ class AppRepositoryImpl implements AppRepository {
   const AppRepositoryImpl._internal();
   static const AppRepositoryImpl _impl = AppRepositoryImpl._internal();
 
+  @override
+  Future<void> getList() {
+    // TODO: implement getList
+    throw UnimplementedError();
+  }
+
 
 }

@@ -2,7 +2,7 @@
 
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:movie_app/src/feature/entry/vm/entry_view_model.dart";
-import "package:movie_app/src/feature/home/vm/home_view_model.dart";
+import "package:movie_app/src/feature/home_navigation_view_model.dart";
 import "package:movie_app/src/feature/settings/locale_controller.dart";
 import "package:movie_app/src/feature/settings/theme_controller.dart";
 
@@ -13,4 +13,5 @@ final locale = ChangeNotifierProvider((ref) => LocalController());
   // splash onBoarding
 final entryController = ChangeNotifierProvider((ref) => EntryViewModel());
 
-final homeController = ChangeNotifierProvider((ref) => HomeViewModel());
+final homeNavigationController = ChangeNotifierProvider((ref) => HomeViewModel());
+final homePageController = ChangeNotifierProvider((ref) => HomeViewModel());
