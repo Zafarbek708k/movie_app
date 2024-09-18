@@ -5,12 +5,23 @@ final class ApiConst {
   static const Duration sendTimeout = Duration(minutes: 1);
   static const Duration receiveTimeout = Duration(minutes: 1);
 
-  // Base URL for the API
-  static const String baseUrl = "https://api.themoviedb.org/3";
+  static const String baseUrl = "https://api.themoviedb.org";
+  static const String version = "/3";
+  static const String apiUpcoming = "$version/movie/upcoming";
+  static const String apiPopular= "$version/movie/popular";
+  static const String apiTopRated = "$version/movie/top_rated";
+
+// Query parameters
+  static final Map<String, String> param = {
+    "api_key": ApiConst.apiKey,
+    "Content-Type": "application/json",
+  };
+
+
 
   // Dynamic API Endpoints
-  static String apiGetMovieLis = "/account/$accountId/lists";
-  static String apiGetWatchListMovies = "/account/$accountId/watchlist/movies";
+  static String apiGetMovieLis = "$version/account/$accountId/lists";
+  static String apiGetWatchListMovies = "$version/account/$accountId/watchlist/movies";
 
   // Static Endpoint (for general trending movies with pagination)
   static const String apiGetMovieWithPage = "/trending/all/day";
