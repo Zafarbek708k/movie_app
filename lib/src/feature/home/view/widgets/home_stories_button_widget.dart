@@ -6,9 +6,10 @@ import 'package:movie_app/src/core/constants/context_extension.dart';
 import '../../../../core/widgets/text_widget.dart';
 
 class StoriesButton extends StatefulWidget {
-  const StoriesButton({super.key, required this.backdropPath, this.filmName});
+  const StoriesButton({super.key, required this.backdropPath, this.filmName, this.onPressed});
 
   final String? backdropPath, filmName;
+  final VoidCallback? onPressed;
 
   @override
   State<StoriesButton> createState() => _StoriesButtonState();

@@ -3,6 +3,8 @@ import "package:go_router/go_router.dart";
 import "package:movie_app/src/feature/entry/view/pages/on_boarding_page.dart";
 import "package:movie_app/src/feature/entry/view/pages/splash_page.dart";
 import "package:movie_app/src/feature/home/view/pages/home.dart";
+import "package:movie_app/src/feature/home/view/pages/search.dart";
+import "package:movie_app/src/feature/home/view/pages/watch_list.dart";
 import "package:movie_app/src/feature/settings/theme_controller.dart";
 import "../../feature/home_navigation.dart";
 import "app_route_name.dart";
@@ -52,7 +54,7 @@ final class AppRouter {
             routes: [
               GoRoute(
                 path: AppRouteName.search,
-                pageBuilder: (context, state) => const NoTransitionPage(child: Scaffold()),
+                pageBuilder: (context, state) => const NoTransitionPage(child: Search()),
               ),
             ],
           ),
@@ -60,7 +62,7 @@ final class AppRouter {
             routes: [
               GoRoute(
                 path: AppRouteName.watchList,
-                pageBuilder: (context, state) => const NoTransitionPage(child: Scaffold()),
+                pageBuilder: (context, state) => const NoTransitionPage(child: WatchList()),
               ),
             ],
           ),

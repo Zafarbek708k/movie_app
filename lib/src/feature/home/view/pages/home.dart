@@ -49,7 +49,6 @@ class _HomePageState extends ConsumerState<Home> {
         isLoading = true;
       });
     }
-
   }
 
   @override
@@ -87,13 +86,14 @@ class _HomePageState extends ConsumerState<Home> {
                         return StoriesButton(
                           backdropPath: movie.backdropPath,
                           filmName: movie.title,
+                          onPressed: () {},
                         );
                       },
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
-                    child: CustomTextWidget(context.localized.stories, textColor: context.appTheme.secondary, fontSize: 24),
+                    child: CustomTextWidget(context.localized.upComing, textColor: context.appTheme.secondary, fontSize: 24),
                   ),
                   SizedBox(
                     height: 250,
@@ -101,7 +101,11 @@ class _HomePageState extends ConsumerState<Home> {
                       scrollDirection: Axis.horizontal,
                       itemCount: model2?.results.length ?? 0, // Use the length from model2 safely
                       itemBuilder: (context, index) {
-                        return UpComingMovieCard(model: model2!, index: index);
+                        return UpComingMovieCard(
+                          model: model2!,
+                          index: index,
+                          onPressed: () {},
+                        );
                       },
                     ),
                   ),
@@ -143,4 +147,3 @@ class _HomePageState extends ConsumerState<Home> {
     );
   }
 }
-

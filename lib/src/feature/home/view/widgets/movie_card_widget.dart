@@ -11,10 +11,11 @@ import '../../../../data/entity/top_rated_model.dart';
 
 
 class MoviesCard extends StatefulWidget {
-  const MoviesCard({super.key, required this.model, required this.index});
+  const MoviesCard({super.key, required this.model, required this.index, this.onPressed});
 
   final Model model;
   final int index;
+  final VoidCallback? onPressed;
 
   @override
   State<MoviesCard> createState() => _MoviesCardState();
@@ -126,9 +127,12 @@ class _MoviesCardState extends State<MoviesCard> {
 
 
 class TopRatedMovieCard extends StatefulWidget {
-  const TopRatedMovieCard({super.key, required this.model, required this.index});
+  const TopRatedMovieCard({super.key, required this.model, required this.index, this.onPressed});
   final Toprated model;
   final int index;
+
+  final VoidCallback? onPressed;
+
 
   @override
   State<TopRatedMovieCard> createState() => _TopRatedMovieCardState();
@@ -240,9 +244,12 @@ class _TopRatedMovieCardState extends State<TopRatedMovieCard> {
 
 
 class UpComingMovieCard extends StatefulWidget {
-  const UpComingMovieCard({super.key, required this.model, required this.index});
+  const UpComingMovieCard({super.key, required this.model, required this.index, this.onPressed});
   final UpComing model;
   final int index;
+
+  final VoidCallback? onPressed;
+
 
   @override
   State<UpComingMovieCard> createState() => _UpComingMovieCardState();
