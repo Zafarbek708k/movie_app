@@ -50,10 +50,10 @@ class _HomeNavigationState extends State<HomeNavigation> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              LangButton(),
-              SizedBox(height: 50),
+              const LangButton(),
+              const SizedBox(height: 50),
               CustomTextWidget(
-                "Switch Theme",
+                context.localized.switchTheme,
                 textColor: context.appTheme.secondary,
               ),
               MaterialButton(
@@ -62,7 +62,7 @@ class _HomeNavigationState extends State<HomeNavigation> {
                 },
                 shape: const StadiumBorder(side: BorderSide(color: Colors.orangeAccent)),
                 child: Text(
-                  "Switch them",
+                  context.localized.switchTheme,
                   style: TextStyle(color: Theme.of(context).colorScheme.secondary),
                 ),
               ),
@@ -93,10 +93,10 @@ class _HomeNavigationState extends State<HomeNavigation> {
                 selectedItemColor: Colors.lightGreen,
                 elevation: 0,
                 backgroundColor: Colors.blueGrey.shade700,
-                items: const [
-                  BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-                  BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-                  BottomNavigationBarItem(icon: Icon(Icons.list), label: "Watch List"),
+                items:  [
+                  BottomNavigationBarItem(icon: const Icon(Icons.home), label: context.localized.home),
+                  BottomNavigationBarItem(icon: const Icon(Icons.search), label: context.localized.search),
+                  BottomNavigationBarItem(icon: const Icon(Icons.list), label: context.localized.watchList),
                 ],
                 currentIndex: widget.navigationShell.currentIndex,
                 onTap: (index) => _onItemTapped(index),

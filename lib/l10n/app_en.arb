@@ -10,7 +10,7 @@
   "welcome2description": "Get movie suggestions tailored just for you.",
 
   "welcome3title": "Create Your Watchlist",
-  "welcome3description": "Start adding movies to your watchlist and never miss a hit!"
+  "welcome3description": "Start adding movies to your watchlist and never miss a hit!",
 
     "home": "Home",
     "homeDesc": "Home",
@@ -34,6 +34,6 @@
     "topRatedDesc": "Top Rated",
 
     "popular": "Popular",
-    "popularDesc": "Popular",
+    "popularDesc": "Popular"
 
 }

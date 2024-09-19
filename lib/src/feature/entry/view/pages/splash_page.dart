@@ -5,9 +5,7 @@ import "package:flutter_screenutil/flutter_screenutil.dart";
 import "package:go_router/go_router.dart";
 import "package:movie_app/src/core/constants/context_extension.dart";
 import "package:movie_app/src/core/storage/app_storage.dart";
-import "package:movie_app/src/feature/entry/view/widgets/custom_lang_button.dart";
 import "../../../../core/routes/app_route_name.dart";
-import "../../../../core/widgets/app_material_context.dart";
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -48,40 +46,30 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 50),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            const LangButton(),
-            const SizedBox(height: 120),
-            Container(
-              height: 150.h,
-              width: 150.h,
-              decoration: BoxDecoration(
-                color: context.appTheme.primary,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: context.appTheme.secondary),
-                image: const DecorationImage(
-                  image: AssetImage("assets/images/app_logo.png"),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                height: 150.h,
+                width: 150.h,
+                decoration: BoxDecoration(
+                  color: context.appTheme.primary,
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(color: context.appTheme.secondary),
+                  image: const DecorationImage(
+                    image: AssetImage("assets/images/app_logo.png"),
+                  ),
                 ),
               ),
-            ),
-            Text("Movie App", style: context.appTextStyle.bodyLarge),
-            Text(
-              context.localized.welcome3description,
-              style: context.appTextStyle.bodyMedium,
-            ),
-            MaterialButton(
-              onPressed: () async {
-                themeController.switchTheme(); // Using the shared instance
-              },
-              shape: const StadiumBorder(side: BorderSide(color: Colors.orangeAccent)),
-              child: Text(
-                "Switch them",
-                style: TextStyle(color: Theme.of(context).colorScheme.secondary),
-              ),
-            ),
 
-          ],
+              const SizedBox(height: 25),
+              Text("Movie App", style: context.appTextStyle.bodyLarge),
+
+
+            ],
+          ),
         ),
       ),
     );

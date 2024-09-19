@@ -73,7 +73,7 @@ class _HomePageState extends ConsumerState<Home> {
                   const SizedBox(height: 25),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
-                    child: CustomTextWidget("Stories", textColor: context.appTheme.secondary, fontSize: 24),
+                    child: CustomTextWidget(context.localized.stories, textColor: context.appTheme.secondary, fontSize: 24),
                   ),
                   SizedBox(
                     height: 120,
@@ -93,7 +93,7 @@ class _HomePageState extends ConsumerState<Home> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
-                    child: CustomTextWidget("Up Coming", textColor: context.appTheme.secondary, fontSize: 24),
+                    child: CustomTextWidget(context.localized.stories, textColor: context.appTheme.secondary, fontSize: 24),
                   ),
                   SizedBox(
                     height: 250,
@@ -105,18 +105,9 @@ class _HomePageState extends ConsumerState<Home> {
                       },
                     ),
                   ),
-                  MaterialButton(
-                    onPressed: () async {
-                      await getData();
-                    },
-                    shape: const StadiumBorder(
-                      side: BorderSide(color: Colors.deepOrange),
-                    ),
-                    child: const Text("Press"),
-                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
-                    child: CustomTextWidget("Top Rated", textColor: context.appTheme.secondary, fontSize: 24),
+                    child: CustomTextWidget(context.localized.topRated, textColor: context.appTheme.secondary, fontSize: 24),
                   ),
                   SizedBox(
                     height: 250,
@@ -130,7 +121,7 @@ class _HomePageState extends ConsumerState<Home> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
-                    child: CustomTextWidget("Popular", textColor: context.appTheme.secondary, fontSize: 24),
+                    child: CustomTextWidget(context.localized.popular, textColor: context.appTheme.secondary, fontSize: 24),
                   ),
                   SizedBox(
                     height: 250,
