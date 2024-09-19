@@ -51,11 +51,14 @@ class _HomeNavigationState extends State<HomeNavigation> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const LangButton(),
+
               const SizedBox(height: 50),
               CustomTextWidget(
                 context.localized.switchTheme,
                 textColor: context.appTheme.secondary,
               ),
+
+
               MaterialButton(
                 onPressed: () async {
                   themeController.switchTheme(); // Using the shared instance
@@ -66,6 +69,14 @@ class _HomeNavigationState extends State<HomeNavigation> {
                   style: TextStyle(color: Theme.of(context).colorScheme.secondary),
                 ),
               ),
+
+              CustomTextWidget(
+                "Created by Zafarbek Karimov",
+                textColor: context.appTheme.secondary,
+              )
+
+
+
             ],
           ),
         ),

@@ -38,7 +38,6 @@ const ColorScheme lightColorScheme = ColorScheme(
 
 const ColorScheme darkColorScheme = ColorScheme(
   brightness: Brightness.dark,
-
   primary: AppColors.appMainColor,
   onPrimary: AppColors.appBottomNavColor,
   secondary: AppColors.white,
