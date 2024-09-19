@@ -31,7 +31,7 @@ Here's an advanced README content template for your Movie App project on GitHub:
 
 ## Technologies Used
 
-- **Flutter**: A UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.
+- **Flutter**: A UI toolkit for building natively compiled applications for mobile.
 - **Dart**: The language used to write Flutter apps, optimized for fast apps on any platform.
 - **Riverpod**: State management library that ensures scalability and modular code architecture.
 - **MVVM Architecture**: Ensures a clear separation of the app’s logic from the UI, making the app easier to test and maintain.
@@ -107,9 +107,6 @@ The app uses **Riverpod** for state management, ensuring optimal performance wit
 
 Sensitive data such as authentication tokens and user preferences are securely stored using **Flutter Secure Storage**, ensuring that no sensitive information is exposed in plaintext.
 
-## Offline Support
-
-The app uses local storage mechanisms (such as **Shared Preferences**) to store user preferences and movie data, enabling a smooth experience even when the device is offline.
 
 ## Localization
 
@@ -130,10 +127,4 @@ Add screenshots to showcase the app's design and features.
 
 Contributions are welcome! If you'd like to contribute to the project, please fork the repository, make your changes, and submit a pull request. Please ensure that your changes align with the project's architecture and coding standards.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
----
-
-This README file provides an advanced and professional overview of your Movie App project, ideal for showcasing on GitHub!
+ 
