@@ -2,12 +2,38 @@
   "@@locale": "ru",
 
   "helloWorld": "Привет, мир!",
-  "welcome1title": "Добро пожаловать",
-  "welcome1description": "Это первый экран приветствия.",
 
-  "welcome2title": "Откройте для себя",
-  "welcome2description": "Здесь вы можете узнать больше о наших функциях.",
+   "welcome1title": "Исследуйте фильмы",
+    "welcome1description": "Откройте для себя последние и лучшие фильмы здесь.",
 
-  "welcome3title": "Начать",
-  "welcome3description": "Давайте начнем использовать приложение!"
+    "welcome2title": "Персональные рекомендации",
+    "welcome2description": "Получайте предложения фильмов, подобранные специально для вас.",
+
+    "welcome3title": "Создайте свой список для просмотра",
+    "welcome3description": "Начните добавлять фильмы в свой список и не пропустите ни одного хита!",
+
+
+   "home": "Главная",
+    "homeDesc": "Главная",
+
+    "search": "Поиск",
+    "searchDesc": "Поиск",
+
+    "watchList": "Список для просмотра",
+    "watchListDesc": "Список для просмотра",
+
+    "switchTheme": "Переключить тему",
+    "switchThemeDesc": "Переключить тему",
+
+    "stories": "Истории",
+    "storiesDesc": "Истории",
+
+    "upComing": "Скоро в прокате",
+    "upComingDesc": "Скоро в прокате",
+
+    "topRated": "Лучшие",
+    "topRatedDesc": "Лучшие",
+
+    "popular": "Популярное",
+    "popularDesc": "Популярное"
 }

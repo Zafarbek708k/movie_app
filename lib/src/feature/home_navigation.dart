@@ -1,13 +1,9 @@
-import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movie_app/src/core/constants/context_extension.dart';
-import 'package:movie_app/src/core/widgets/blur_widget.dart';
 import 'package:movie_app/src/core/widgets/text_widget.dart';
-import 'package:movie_app/src/feature/settings/theme_controller.dart';
-
 import '../core/widgets/app_material_context.dart';
 import 'entry/view/widgets/custom_lang_button.dart';
 
@@ -51,14 +47,15 @@ class _HomeNavigationState extends State<HomeNavigation> {
         backgroundColor: context.appTheme.primary,
         child: Padding(
           padding: REdgeInsets.symmetric(horizontal: 8, vertical: 25),
-          child:  Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               LangButton(),
               SizedBox(height: 50),
-
-              CustomTextWidget("Switch Theme", textColor: context.appTheme.secondary,),
-
+              CustomTextWidget(
+                "Switch Theme",
+                textColor: context.appTheme.secondary,
+              ),
               MaterialButton(
                 onPressed: () async {
                   themeController.switchTheme(); // Using the shared instance
