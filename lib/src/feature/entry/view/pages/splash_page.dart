@@ -29,15 +29,14 @@ class _SplashPageState extends State<SplashPage> {
     }
   }
 
-
   @override
-  void didChangeDependencies()async {
+  void didChangeDependencies() async {
     bool? a = await isEnterUser();
     log("a ==  $a");
-    Timer(const Duration(seconds: 2), (){
-      if(a != null && a == true){
+    Timer(const Duration(seconds: 2), () {
+      if (a != null && a == true) {
         context.go(AppRouteName.home);
-      }else{
+      } else {
         context.go(AppRouteName.welcomePage);
       }
     });
@@ -58,18 +57,19 @@ class _SplashPageState extends State<SplashPage> {
               height: 150.h,
               width: 150.h,
               decoration: BoxDecoration(
-                  color: context.appTheme.primary,
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: context.appTheme.secondary),
-                  image: const DecorationImage(image: AssetImage("assets/images/app_logo.png"))),
+                color: context.appTheme.primary,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(color: context.appTheme.secondary),
+                image: const DecorationImage(
+                  image: AssetImage("assets/images/app_logo.png"),
+                ),
+              ),
             ),
             Text("Movie App", style: context.appTextStyle.bodyLarge),
             Text(
               context.localized.welcome3description,
               style: context.appTextStyle.bodyMedium,
             ),
-
-
             MaterialButton(
               onPressed: () async {
                 themeController.switchTheme(); // Using the shared instance
@@ -80,21 +80,6 @@ class _SplashPageState extends State<SplashPage> {
                 style: TextStyle(color: Theme.of(context).colorScheme.secondary),
               ),
             ),
-
-
-            MaterialButton(
-              onPressed: () async {
-                context.go(AppRouteName.welcomePage);
-              },
-              shape: const StadiumBorder(side: BorderSide(color: Colors.orangeAccent)),
-              child: Text(
-                "Go Next",
-                style: TextStyle(color: Theme.of(context).colorScheme.secondary),
-              ),
-            ),
-
-
-
 
           ],
         ),

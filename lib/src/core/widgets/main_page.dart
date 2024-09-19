@@ -9,8 +9,6 @@
 // import "package:movie_app/src/core/constants/context_extension.dart";
 //
 // import "../../../../../riverpod.dart";
-// import "../../../../core/widgets/blur_widget.dart";
-// import "../../../settings/theme_controller.dart";
 //
 // class MainPage extends ConsumerStatefulWidget {
 //   const MainPage({required this.child, super.key});

@@ -65,36 +65,46 @@ class ApiService {
     return headers;
   }
 
-  static Future<dynamic> get(String api, Map<String, dynamic> params) async {
+  static Future<String?> get(String api, Map<String, String> params) async {
+    final fullUrl = "${ApiConst.baseUrl}$api";
+        log("Request URL: $fullUrl");
+        log("Request Params: $params");
     try {
-      // Print the full URL for debugging
-      final fullUrl = "${ApiConst.baseUrl}$api";
-      log("Request URL: $fullUrl");
-      log("Request Params: $params");
+      final response = await (await initDio()).get<dynamic>(api, queryParameters: params);
+      log("response status code = ${response.statusCode}");
 
-      // Make the API request
-      final response = await (await initDio()).get<dynamic>(
-        api,
-        queryParameters: params,
-      );
-
-      // Log the response data correctly
-      log("Response data (raw): ${response.data.toString()}");
-      log("Response data type: ${response.data.runtimeType}");
-
-      // If response.data is a Map or List, return it as is.
-      if (response.data is Map<String, dynamic> || response.data is List) {
-        return response.data;  // Return the raw Map or List data
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        log("response data ketti api response == ${response.data}");
+        return jsonEncode(response.data);
       }
+    } on DioException catch (e) {
+      log("DioException: Error at ${e.requestOptions.uri}. Because of ${e.type.name}");
+    } catch (e) {
+      log("Unexpected error: $e");
+    }
+    return null;
+  }
 
-      // If you expect a string response, you can handle it here (unlikely in JSON APIs)
-      if (response.data is String) {
-        return response.data;
-      }
 
-      // You can also return the JSON-encoded version if you need it in string form
+
+  static Future<dynamic> getData(String api, Map<String, dynamic> params) async {
+    try {
+      final fullUrl = "${ApiConst.baseUrl}$api"; log("Request URL: $fullUrl"); log("Request Params: $params");
+
+      final response = await (await initDio()).get<dynamic>(api, queryParameters: params);
+      //
+      // if (response.data is Map<String, dynamic> || response.data is List) {
+      //   log("1");
+      //   return response.data; // Return the raw Map or List data
+      // }
+      // if (response.data is String) {
+      //   log("2");
+      //   return response.data;
+      // }
+      // log("3");
+
       return jsonEncode(response.data);
-
+      // return response.data.toString();
     } on TimeoutException catch (_) {
       log("The connection has timed out, Please try again!");
       rethrow;
@@ -106,7 +116,6 @@ class ApiService {
       rethrow;
     }
   }
-
 
   // static Future<String?> get(String api, Map<String, dynamic> params) async {
   //   try {
