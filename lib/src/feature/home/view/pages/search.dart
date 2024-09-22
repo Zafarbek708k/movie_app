@@ -1,4 +1,4 @@
- import "package:flutter/material.dart";
+import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
 import "package:movie_app/src/core/constants/context_extension.dart";
@@ -11,8 +11,7 @@ import "../../../../data/entity/top_rated_model.dart";
 import "../../../../data/entity/up_coming_model.dart";
 
 class Search extends ConsumerStatefulWidget {
-  const Search({ super.key});
-
+  const Search({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _SearchState();
@@ -59,7 +58,7 @@ class _SearchState extends ConsumerState<Search> {
     ref.watch(homePageController);
     final controller = ref.read(homePageController);
     return Scaffold(
-      body:  SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -69,11 +68,10 @@ class _SearchState extends ConsumerState<Search> {
               padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
               child: CustomTextWidget(context.localized.search, textColor: context.appTheme.secondary, fontSize: 24),
             ),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.grey,
@@ -81,15 +79,10 @@ class _SearchState extends ConsumerState<Search> {
                 ),
                 child: TextField(
                   controller: searchController,
-                  style: TextStyle(
-                    color: context.appTheme.secondary
-                  ),
+                  style: TextStyle(color: context.appTheme.secondary),
                 ),
               ),
             ),
-
-
-
             SizedBox(height: 120.h)
           ],
         ),
@@ -97,4 +90,3 @@ class _SearchState extends ConsumerState<Search> {
     );
   }
 }
-

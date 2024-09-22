@@ -1,9 +1,4 @@
-// To parse this JSON data, do
-//
-//     final model = modelFromJson(jsonString);
-
-import 'package:meta/meta.dart';
-import 'dart:convert';
+ import 'dart:convert';
 
 Model modelFromJson(String str) => Model.fromJson(json.decode(str));
 
@@ -121,7 +116,7 @@ class Result {
     backdropPath: json["backdrop_path"],
     genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
     id: json["id"],
-    originalLanguage: originalLanguageValues.map[json["original_language"]]!,
+    originalLanguage: OriginalLanguage.fromJson(json["original_language"]),
     originalTitle: json["original_title"],
     overview: json["overview"],
     popularity: json["popularity"].toDouble(),
@@ -138,7 +133,7 @@ class Result {
     "backdrop_path": backdropPath,
     "genre_ids": List<dynamic>.from(genreIds.map((x) => x)),
     "id": id,
-    "original_language": originalLanguageValues.reverse[originalLanguage],
+    "original_language": originalLanguage.toJson(),
     "original_title": originalTitle,
     "overview": overview,
     "popularity": popularity,
@@ -151,26 +146,27 @@ class Result {
   };
 }
 
-enum OriginalLanguage {
-  CN,
-  EN,
-  HI
-}
+class OriginalLanguage {
+  final String language;
 
-final originalLanguageValues = EnumValues({
-  "cn": OriginalLanguage.CN,
-  "en": OriginalLanguage.EN,
-  "hi": OriginalLanguage.HI
-});
+  OriginalLanguage({required this.language});
 
-class EnumValues<T> {
-  Map<String, T> map;
-  late Map<T, String> reverseMap;
+  // fromJson method
+  factory OriginalLanguage.fromJson(String language) {
+    return OriginalLanguage(
+      language: language,
+    );
+  }
 
-  EnumValues(this.map);
+  // toJson method
+  String toJson() {
+    return language;
+  }
 
-  Map<T, String> get reverse {
-    reverseMap = map.map((k, v) => MapEntry(v, k));
-    return reverseMap;
+  // copyWith method
+  OriginalLanguage copyWith({String? language}) {
+    return OriginalLanguage(
+      language: language ?? this.language,
+    );
   }
 }

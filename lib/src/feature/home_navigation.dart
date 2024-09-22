@@ -107,7 +107,7 @@ class _HomeNavigationState extends State<HomeNavigation> {
                 items:  [
                   BottomNavigationBarItem(icon: const Icon(Icons.home), label: context.localized.home),
                   BottomNavigationBarItem(icon: const Icon(Icons.search), label: context.localized.search),
-                  BottomNavigationBarItem(icon: const Icon(Icons.list), label: context.localized.watchList),
+                  BottomNavigationBarItem(icon: const Icon(Icons.person), label: context.localized.profile),
                 ],
                 currentIndex: widget.navigationShell.currentIndex,
                 onTap: (index) => _onItemTapped(index),

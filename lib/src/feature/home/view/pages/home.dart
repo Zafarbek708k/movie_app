@@ -25,8 +25,8 @@ class _HomePageState extends ConsumerState<Home> {
   bool isLoading = false;
   String? data;
   Model? model;
-  UpComing? model2;
-  Toprated? model3;
+  Model? model2;
+  Model? model3;
 
   Future<void> getData() async {
     setState(() {
@@ -42,8 +42,8 @@ class _HomePageState extends ConsumerState<Home> {
     if (response!.isNotEmpty && response2!.isNotEmpty && response3!.isNotEmpty) {
       log("1");
       model = modelFromJson(response);
-      model2 = upComingFromJson(response2);
-      model3 = topratedFromJson(response3);
+      model2 = modelFromJson(response2);
+      model3 = modelFromJson(response3);
       log("2");
       setState(() {
         isLoading = true;
@@ -101,7 +101,7 @@ class _HomePageState extends ConsumerState<Home> {
                       scrollDirection: Axis.horizontal,
                       itemCount: model2?.results.length ?? 0, // Use the length from model2 safely
                       itemBuilder: (context, index) {
-                        return UpComingMovieCard(
+                        return MoviesCard(
                           model: model2!,
                           index: index,
                           onPressed: () {},
@@ -119,7 +119,7 @@ class _HomePageState extends ConsumerState<Home> {
                       scrollDirection: Axis.horizontal,
                       itemCount: model3?.results.length ?? 0, // Use the length from model2 safely
                       itemBuilder: (context, index) {
-                        return TopRatedMovieCard(model: model3!, index: index);
+                        return MoviesCard(model: model3!, index: index);
                       },
                     ),
                   ),
