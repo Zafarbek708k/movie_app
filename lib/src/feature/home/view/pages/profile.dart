@@ -100,31 +100,37 @@ class _ProfileState extends State<Profile> {
               leadingIcon: Icons.account_balance_wallet,
               text: 'Balansni to\'ldirish',
               trailingIcon: Icons.chevron_right,
+              onPressed: (){},
             ),
             CustomRowWidget(
               leadingIcon: Icons.assignment,
               text: 'Tarif sotib olish',
               trailingIcon: Icons.chevron_right,
+              onPressed: (){},
             ),
             CustomRowWidget(
               leadingIcon: Icons.done_outline,
               text: 'Sotib olingan tariflar',
               trailingIcon: Icons.chevron_right,
+              onPressed: (){},
             ),
             CustomRowWidget(
               leadingIcon: Icons.history_edu_rounded,
               text: 'Tolovlar tarixi',
               trailingIcon: Icons.chevron_right,
+              onPressed: (){},
             ),
             CustomRowWidget(
               leadingIcon: Icons.edit_note_outlined,
               text: 'Buyurtmalar',
               trailingIcon: Icons.chevron_right,
+              onPressed: (){},
             ),
             CustomRowWidget(
               leadingIcon: Icons.monetization_on_outlined,
               text: 'Tarif sotib olish',
               trailingIcon: Icons.chevron_right,
+              onPressed: (){},
             ),
           ],
         ),
@@ -137,12 +143,14 @@ class CustomRowWidget extends StatelessWidget {
   final IconData leadingIcon;
   final String text;
   final IconData trailingIcon;
+  final VoidCallback? onPressed; // Corrected to VoidCallback
 
-
-  CustomRowWidget({
+  const CustomRowWidget({
+    super.key,
     required this.leadingIcon,
     required this.text,
     required this.trailingIcon,
+    this.onPressed,
   });
 
   @override
@@ -150,19 +158,21 @@ class CustomRowWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: CupertinoButton(
-        onPressed: (){},
-
+        onPressed: onPressed,
         child: Row(
           children: [
-            Icon(leadingIcon, color: context.appTheme.secondary),
-            SizedBox(width: 16.0),
+            Icon(leadingIcon, color: context.appTheme.secondary), // Custom context extension
+            const SizedBox(width: 16.0),
             Expanded(
               child: Text(
                 text,
-                style: TextStyle(color: context.appTheme.secondary, fontSize: 16.0),
+                style: TextStyle(
+                  color: context.appTheme.secondary, // Custom theme color
+                  fontSize: 16.0,
+                ),
               ),
             ),
-            Icon(trailingIcon,color: context.appTheme.secondary),
+            Icon(trailingIcon, color: context.appTheme.secondary),
           ],
         ),
       ),
